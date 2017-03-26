@@ -1,0 +1,68 @@
+html, body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+body 
+	{  
+		background-image:url("images/cyanbk.jpg"); 
+		background-size: cover;
+		background-repeat: no-repeat;
+	} 
+	
+#header {
+  overflow: hidden;
+  background-color: #333;
+  height:8%;
+}
+
+#header img {
+  float: left;
+  display: block;
+  size:100 100;
+}
+
+#header a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#header a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.mainDiv {  
+	text-align:center;
+	width:100%;
+    height: 85%;
+}
+
+.mainDiv table { 
+	margin-left:30%;
+	width:40%;
+	color:gray;
+	background-color:white;
+	align:center;
+}
+
+.mainDiv thead {  
+  align:left;
+} 
+
+.footer{
+    background-color: gray; /* .push must be the same height as .footer */
+	height:5%;
+}
+
