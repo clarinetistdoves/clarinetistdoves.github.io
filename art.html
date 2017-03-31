@@ -7,10 +7,19 @@
 	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	
-	<script>
+	<script>	
 		var app = angular.module('myApp', []);
 		app.controller('galleryCtrl', function($scope) {	
 			$scope.images=["images/art/1.JPG","images/art/2.JPG","images/art/3.JPG","images/art/4.JPG","images/art/5.JPG","images/art/6.JPG","images/art/7.JPG","images/art/8.JPG","images/art/9.jpg","images/art/10.jpg"];
+			
+			$scope.onImageClick =function (src)
+			{
+				model.style.display="block";
+				enlargedImg.src=src;
+				enlargedImg.alt=src;
+
+			}
+
 		});
 	</script>
 
@@ -31,16 +40,33 @@
 				MY ART
 			</h2>
 			<div class="imageDivOuter" ng-repeat="myImage in images">
-				<img ng-src="{{myImage}}" alt="{{myImage}}" />
+				<img ng-src="{{myImage}}" alt="{{myImage}}" ng-click="onImageClick(myImage)"/>
 			</div>
 		</div>
 	<div id="mainDiv" class="mainDiv">	
+	
+	<div id="myModel" class="model">
+		<span class="close" onclick="onCloseClick()">&times;</span>
+		<br>
+		<img id="enlargedImg" src="images/art/10.jpg"/>
+	</div>	
 
 	<!--
 	<footer class="footer">
 		<p>Posted by: Helen Huang <a href="mailto:huanghehe@yahoo.com">huanghehe@yahoo.com</a>.</p>
 	</footer>
 	-->
+	
+	<script>
+	var model=document.getElementById("myModel");
+	var enlarged=document.getElementById("enlargedImg");
+	
+	function onCloseClick ()
+	{
+	model.style.display="none";
+		}
+
+	</script>
 
 </body>
 </html>
