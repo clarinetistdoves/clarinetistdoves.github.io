@@ -3,6 +3,16 @@
 <html>
 <head>
 	<link rel="stylesheet" href="styles.css"/>
+	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('galleryCtrl', function($scope) {	
+			$scope.images=["images/art/1.jpg","images/art/2.jpg","images/art/3.jpg","images/art/4.jpg","images/art/5.jpg","images/art/6.jpg","images/art/7.jpg","images/art/8.jpg","images/art/9.jpg","images/art/10.jpg"];
+		});
+	</script>
+
 </head>
 
 <body>
@@ -14,25 +24,22 @@
 	  <a href="contact.html">Contact</a>
 	  <a href="about.html">About</a>
 	</div>
-
-	<div id="contactDiv" class="mainDiv">
-		<h2 style="color:white">
-		MY ART
-		</h2>
-
-		<a href="default.asp">
-		  <img src="images/jorapy1234art.jpg" alt="http://jorapy1234art.deviantart.com/" style="width:42px;height:42px;border:0;">
-		</a>
-
-		<a href="default.asp">
-		  <img src="images/iconb.png" alt="http://michiuu.deviantart.com/" style="width:42px;height:42px;border:0;">
-		</a>
-	</div>
+	<div id="mainDiv" class="mainDiv">
+		<div class="galleryDiv" ng-app="myApp" ng-controller="galleryCtrl">
+			<h2 style="color:white">
+				MY ART
+			</h2>
+			<div class="imageDivOuter" ng-repeat="myImage in images">
+				<img ng-src="{{myImage}}" alt="{{myImage}}" />
+			</div>
+		</div>
+	<div id="mainDiv" class="mainDiv">
 	
+	<!--
 	<div class="footer">
 		<p>Posted by: Helen Huang. Contact information: <a href="mailto:huanghehe@yahoo.com">huanghehe@yahoo.com</a>.</p>
 	</div>
-
+	-->
 
 </body>
 </html>
