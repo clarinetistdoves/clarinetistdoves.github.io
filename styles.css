@@ -1,6 +1,7 @@
 html, body {
    margin:0;
    padding:0;
+   height:100%;
 }
 
 body 
@@ -8,7 +9,6 @@ body
 		background-image:url("images/background.JPG"); 
 		background-size:100%;
 		background-repeat: repeat;
-		background-color:pink;
 	} 
 	
 #header {
@@ -50,8 +50,8 @@ body
 {
 	width:50%;
 	padding-left:25%;
-	position:absolute;
-	top:50%;	
+	!position:absolute;
+	!bottom:20%;	
 	text-align:center;
 } 
 
@@ -70,8 +70,7 @@ body
 }
 
 .containerDiv {
-	width:100%;
-    min-height: 100%;	
+	width:100%;'
 }
 
 .mainDiv {  
@@ -95,34 +94,21 @@ body
 
 .footer{
     background-color: gray; /* .push must be the same height as .footer */
-	height:2em;
+	height:4em;
 	position:absolute;
 	width:100%;
 	bottom:0;
+	opacity:0.8;
 }
 
-/*
-.imageDiv {
-	float:left;
-	width:auto;
-	height:150px;
-	margin:1em;
-	border:2em;
-
+.footer a,p{
+    color: white; /* .push must be the same height as .footer */
 }
-
-.galleryDiv img{
-	max-width:100%;
-	max-height:100%;
-	
-}
-*/
 
 .imageDivOuter {
 	float:left;
 	width:300px;
 	height:250px;
-	!background-color:green;
 
 }
 
