@@ -131,7 +131,7 @@ body
 	display:none;
 	position:fixed;
 	z-index:1;
-	padding-top:100px;
+	padding-top:2em;
 	left:0;
 	top:0;
 	width:100%;
@@ -147,8 +147,8 @@ body
 }
 
 .close{
-		color:#4CAF50;
-		font-size:4em;
+		color:white;
+		font-size:8em;
 		font-weight:bold;
 }
 
