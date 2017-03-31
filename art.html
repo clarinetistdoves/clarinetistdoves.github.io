@@ -10,14 +10,74 @@
 	<script>	
 		var app = angular.module('myApp', []);
 		app.controller('galleryCtrl', function($scope) {	
-			$scope.images=["images/art/1.JPG","images/art/2.JPG","images/art/3.JPG","images/art/4.JPG","images/art/5.JPG","images/art/6.JPG","images/art/7.JPG","images/art/8.JPG","images/art/9.jpg","images/art/10.jpg"];
+			$scope.images=[
+				{
+					src:"images/art/1.JPG",
+					orientation:"p",
+					index:0
+				},
+				{
+					src:"images/art/2.JPG",
+					orientation:"p",
+					index:1
+				},
+				{
+					src:"images/art/3.JPG",
+					orientation:"p",
+					index:2
+				},
+				{
+					src:"images/art/4.JPG",
+					orientation:"p",
+					index:3
+				},
+				{
+					src:"images/art/5.JPG",
+					orientation:"l",
+					index:4
+				},
+				{
+					src:"images/art/6.JPG",
+					orientation:"p",
+					index:5
+				},
+				{
+					src:"images/art/7.JPG",
+					orientation:"l",
+					index:6
+				},
+				{
+					src:"images/art/8.JPG",
+					orientation:"l",
+					index:7
+				},
+				{
+					src:"images/art/9.jpg",
+					orientation:"l",
+					index:8
+				},
+				{
+					src:"images/art/10.jpg",
+					orientation:"p",
+					index:9
+				}					
+			];
 			
-			$scope.onImageClick =function (src)
+			$scope.onImageClick =function (imgInfo)
 			{
 				model.style.display="block";
-				enlargedImg.src=src;
-				enlargedImg.alt=src;
-
+				enlargedImg.src=imgInfo.src;
+				enlargedImg.alt=imgInfo.src;
+				if(imgInfo.orientation=="p")
+				{
+					enlargedImg.style.height="70%";
+					enlargedImg.style.width="auto";
+				}
+				else
+				{
+					enlargedImg.style.height="auto";
+					enlargedImg.style.width="70%";
+				}
 			}
 
 		});
@@ -40,7 +100,7 @@
 				MY ART
 			</h2>
 			<div class="imageDivOuter" ng-repeat="myImage in images">
-				<img ng-src="{{myImage}}" alt="{{myImage}}" ng-click="onImageClick(myImage)"/>
+				<img ng-src="{{myImage.src}}" alt="{{myImage.src}}" ng-click="onImageClick(myImage)"/>
 			</div>
 		</div>
 	<div id="mainDiv" class="mainDiv">	

@@ -115,10 +115,6 @@ body
 	height:250px;
 }
 
-.imageDivOuter img:hover{
-	opacity=0.7;
-}
-
 .galleryDiv img{
 	max-width:100%;
 	max-height:100%;
